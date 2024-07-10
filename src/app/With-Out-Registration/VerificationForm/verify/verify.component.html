@@ -1,0 +1,162 @@
+<!-- Icons -->
+<div class="mt-4">
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col col-lg-3">
+        <div class="d-flex align-items-center justify-content-center gap-2">
+          <hr class="w-25 text-black bg-light">
+          <p class="mb-0 form-icon bg-purple"><i class="fa-solid fa-archway "></i></p>
+          <p class="mb-0 fw-bold">Restaurant</p>
+        </div>
+      </div>
+
+      <div class="col col-lg-3">
+        <div class="d-flex align-items-center justify-content-center gap-2">
+          <hr class="w-25 text-black bg-light">
+          <p class="mb-0 form-icon bg-purple"><i class="fa-solid fa-location-dot"></i></p>
+          <p class="mb-0 fw-bold">Location</p>
+        </div>
+      </div>
+
+      <div class="col col-lg-3">
+        <div class="d-flex align-items-center justify-content-center gap-2">
+          <hr class="w-25 text-black bg-light">
+          <p class="mb-0 form-icon bg-purple"><i class="fa-regular fa-user"></i></p>
+          <p class="mb-0 fw-bold">Contact</p>
+        </div>
+      </div>
+
+      <div class="col col-lg-3">
+        <div class="d-flex align-items-center justify-content-center gap-2">
+          <hr class="w-25 text-black bg-light">
+          <p class="mb-0 form-icon bg-purple"><i class="fa-regular fa-circle-check"></i></p>
+          <p class="mb-0 fw-bold">Verification</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Form -->
+<div class="register-frenchise">
+  <div class="container">
+    <div class="card p-5 mt-5 rounded-5">
+      <div class="row">
+
+        <h4 class="fw-bold mb-3">Restaurant</h4>
+
+        <div class="col col-lg-3">
+          <p class="mb-1 text-black-50">Restaurant Name</p>
+          <p class="fw-bold">{{restuarntData.restaurantName}}</p>
+        </div>
+
+
+        <div class="col col-lg-2">
+          <p class="mb-1 text-black-50">Start Date</p>
+          <p class="fw-bold">{{restuarntData.startDate}}</p>
+        </div>
+
+
+        <div class="col col-lg-2">
+          <p class="mb-1 text-black-50">Specialty</p>
+          <p class="fw-bold">{{restuarntData.specialty}}</p>
+        </div>
+
+
+        <div class="col col-lg-5">
+          <p class="mb-1 text-black-50">Website Link</p>
+          <p class="fw-bold">{{restuarntData.referenceSite
+            }}</p>
+        </div>
+
+
+        <h4 class="fw-bold my-3">Address</h4>
+
+        <div class="col col-lg-3">
+          <p class="mb-1 text-black-50">{{restuarntData.neighborhood}}</p>
+          <p class="fw-bold">{{restuarntData.country}}</p>
+        </div>
+
+        <div class="col col-lg-3">
+          <p class="mb-1 text-black-50">Zip Code</p>
+          <p class="fw-bold">{{restuarntData.zipCode}}</p>
+        </div>
+
+        <div class="col col-lg-3">
+          <p class="mb-1 text-black-50">City</p>
+          <p class="fw-bold">{{restuarntData.city}}</p>
+        </div>
+
+        <div class="col col-lg-3">
+          <p class="mb-1 text-black-50">State</p>
+          <p class="fw-bold">{{restuarntData.state}}</p>
+        </div>
+
+        <div class="col col-lg-3">
+          <p class="mb-1 text-black-50">Country</p>
+          <p class="fw-bold">{{restuarntData.country}}</p>
+        </div>
+
+        <div class="col col-lg-3">
+          <p class="mb-1 text-black-50">Outside Number</p>
+          <p class="fw-bold">{{restuarntData.outsideNumber}}</p>
+        </div>
+
+        <div class="col col-lg-3">
+          <p class="mb-1 text-black-50">Inner Number</p>
+          <p class="fw-bold">{{restuarntData.innerNumber}}</p>
+        </div>
+
+
+
+        <h4 class="fw-bold my-3">Contact</h4>
+
+        <div class="col col-lg-3">
+          <p class="mb-1 text-black-50">Name</p>
+          <p class="fw-bold">{{restuarntData.contactName}}</p>
+        </div>
+
+        <div class="col col-lg-3">
+          <p class="mb-1 text-black-50">Surname</p>
+          <p class="fw-bold">{{restuarntData.surname}}</p>
+        </div>
+
+        <div class="col col-lg-3">
+          <p class="mb-1 text-black-50">Email</p>
+          <p class="fw-bold">{{restuarntData.email}}</p>
+        </div>
+
+        <div class="col col-lg-3">
+          <p class="mb-1 text-black-50">Phone</p>
+          <p class="fw-bold">{{restuarntData.phoneNumber}}</p>
+        </div>
+
+        <div class="col col-lg-3">
+          <p class="mb-1 text-black-50">Password</p>
+          <p class="fw-bold">{{restuarntData.password}}</p>
+        </div>
+
+        <div class="col col-lg-3">
+          <p class="mb-1 text-black-50">Confirm Password</p>
+          <p class="fw-bold">{{restuarntData.confirmPassword}}</p>
+        </div>
+
+
+        <div class="col col-lg-12 mt-5">
+          <div class="d-flex justify-content-end gap-3">
+            @if(!this.isRestuarntCreated){
+            <button type="button" class="btn btn-light form-btn" (click)="goToVerification()">Back</button>
+            }
+
+            <button type="button" class="btn btn-light form-btn" (click)="goToLayout()">Next</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

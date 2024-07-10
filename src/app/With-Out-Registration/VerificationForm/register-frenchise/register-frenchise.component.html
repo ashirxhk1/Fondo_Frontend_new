@@ -1,0 +1,278 @@
+<!-- Icons -->
+<div class="mt-4">
+    <div class="container">
+        <div class="row">
+           
+
+            <div class="col col-lg-3">
+                <div class="d-flex align-items-center justify-content-center gap-2">
+                    <hr class="w-25">
+                    <p class="mb-0 form-icon bg-purple"><i class="fa-solid fa-archway "></i></p>
+                    <p class="mb-0 fw-bold">Restaurant</p>
+                </div>
+            </div>
+
+            <div class="col col-lg-3">
+                <div class="d-flex align-items-center justify-content-center gap-2">
+                    <hr class="w-25">
+                    <p class="mb-0 form-icon  {{formIndex >= restuarntFormEnum.Address   ? 'bg-purple':''}}"><i class="fa-solid fa-location-dot"></i></p>
+                    <p class="mb-0 fw-bold">Address</p>
+                </div>
+            </div>
+
+            <div class="col col-lg-3">
+                <div class="d-flex align-items-center justify-content-center gap-2">
+                    <hr class="w-25">
+                    <p class="mb-0 form-icon {{formIndex  >= restuarntFormEnum.Contact ? 'bg-purple':''}}"><i class="fa-regular fa-user"></i></p>
+                    <p class="mb-0 fw-bold">Contact</p>
+                </div>
+            </div>
+
+            <div class="col col-lg-3">
+                <div class="d-flex align-items-center justify-content-center gap-2">
+                    <hr class="w-25">
+                    <p class="mb-0 form-icon {{formIndex  >=  restuarntFormEnum.Varification ? 'bg-purple':''}}"><i class="fa-regular fa-circle-check"></i></p>
+                    <p class="mb-0 fw-bold">Verification</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Form -->
+<div class="register-frenchise">
+    <div class="container">
+        <div class="card p-5 mt-5 rounded-5">
+            <form [formGroup]="form">
+
+           @if(restuarntFormEnum.RestuarntInfo == formIndex){
+
+            <div class="row">
+                <div class="col col-lg-12 mb-4">
+                    <label class="mx-3 mb-2 fw-bold">Restaurant Name</label>
+                    <input type="text"  class="form-control bg-light rounded-5 border-black-50 py-2 px-3" placeholder="Enter Your Restaurant Name" formControlName="RestaurantName">
+                    @if(form.controls['RestaurantName'].invalid){
+                        <span class="danger">Restuart Name is required </span>
+                    }
+                </div>
+                <div class="col col-lg-6 mb-4">
+                    <label class="mx-3 mb-2 fw-bold">Start Date</label>
+                    <input type="date" class="form-control bg-light rounded-5 border-black-50 py-2 px-3" placeholder="Year of Opening" formControlName="StartDate">
+                    @if(form.controls['StartDate'].invalid){
+                        <span class="danger">Start Date is required </span>
+                    }
+                </div>
+                <div class="col col-lg-6 mb-4">
+                    <label class="mx-3 mb-2 fw-bold">Specialty</label>
+                    <select class="form-select px-3 bg-light rounded-5 border-black-50 p-2" formControlName="Specialty">
+                        <option selected value="0">Select</option>
+                        <option value="1">1</option>
+                        <option value="2">3</option>
+                        <option value="3">3</option>
+                      </select>
+                      @if(form.controls['Specialty'].invalid){
+                        <span class="danger">Specialty is required </span>
+                    }  
+                </div>
+                <div class="col col-lg-12 mb-4">
+                    <label class="mx-3 mb-2 fw-bold">Reference Site</label>
+                    <input type="text" formControlName="ReferenceSite" class="form-control bg-light rounded-5 border-black-50 py-2 px-3" placeholder="Reference Site or Webpage Link">
+                    @if(form.controls['ReferenceSite'].invalid){
+                        <span class="danger">Reference Site Name is required </span>
+                    }
+                </div>
+                <div class="col col-lg-12 mt-5">
+                    <div class="d-flex justify-content-end gap-3">
+                        <button type="button" class="btn btn-light form-btn" (click)="goToFrenchise()">Back</button>
+                        <button type="button" class="btn btn-light form-btn" (click)="goToAddress(restuarntFormEnum.Address)">Next</button>
+                    </div>
+                </div>
+            </div> } 
+          
+
+            @if(restuarntFormEnum.Address == formIndex){
+
+                <div class="register-frenchise" >
+                    <div class="container">
+                        <div class="card p-5 mt-5 rounded-5">
+                            <div class="row">
+                               
+                                <div class="col col-lg-12 mb-4">
+                                    <label class="mx-3 mb-2 fw-bold">Neighborhood</label>
+                                    <select class="form-select px-3 bg-light rounded-5 border-black-50 p-2" formControlName="Neighborhood">
+                                        <option selected>Select</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                      </select>
+                                      @if(form.controls['Neighborhood'].invalid){
+                                        <span class="danger">Reference Site Name is required </span>
+                                    }
+                                </div>
+                
+                                <div class="col col-lg-6 mb-4">
+                                    <label class="mx-3 mb-2 fw-bold">Zip Code</label>
+                                    <input type="text" formControlName="ZipCode" class="form-control bg-light rounded-5 border-black-50 py-2 px-3" placeholder="Zip Code">
+                                    @if(form.controls['ZipCode'].invalid){
+                                        <span class="danger">Reference Site Name is required </span>
+                                    }
+                                </div>
+                
+                                <div class="col col-lg-6 mb-4">
+                                    <label class="mx-3 mb-2 fw-bold">City</label>
+                                    <input type="text" formControlName="City" class="form-control bg-light rounded-5 border-black-50 py-2 px-3" placeholder="City">
+                                    @if(form.controls['City'].invalid){
+                                        <span class="danger">Reference Site Name is required </span>
+                                    }
+                                </div>
+                
+                                <div class="col col-lg-6 mb-4">
+                                    <label class="mx-3 mb-2 fw-bold">State</label>
+                                    <input type="text" formControlName="State" class="form-control bg-light rounded-5 border-black-50 py-2 px-3" placeholder="State">
+                                    @if(form.controls['State'].invalid){
+                                        <span class="danger">Reference Site Name is required </span>
+                                    }
+                                </div>
+                
+                                <div class="col col-lg-6 mb-4">
+                                    <label class="mx-3 mb-2 fw-bold">Country</label>
+                                    <select class="form-select px-3 bg-light rounded-5 border-black-50 p-2" formControlName="Country" >
+                                        <option selected>Country</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                      </select>
+                                      @if(form.controls['Country'].invalid){
+                                        <span class="danger">Reference Site Name is required </span>
+                                     }
+                                </div>
+                
+                                <div class="col col-lg-9 mb-4">
+                                    <label class="mx-3 mb-2 fw-bold">Outside Number</label>
+                                    <input type="text" class="form-control bg-light rounded-5 border-black-50 py-2 px-3" placeholder="Number" formControlName="OutsideNumber">
+                                    @if(form.controls['OutsideNumber'].invalid){
+                                        <span class="danger">Reference Site Name is required </span>
+                                     }
+                                </div>
+                
+                                <div class="col col-lg-3 mb-4">
+                                    <label class="mx-3 mb-2 fw-bold">Inner Number</label>
+                                    <input type="text" class="form-control bg-light rounded-5 border-black-50 py-2 px-3" placeholder="Number" formControlName="InnerNumber" >
+                                    @if(form.controls['InnerNumber'].invalid){
+                                        <span class="danger">Reference Site Name is required </span>
+                                     }
+                                </div>
+                
+                                <div class="col col-lg-12 mt-5">
+                                    <div class="d-flex justify-content-end gap-3">
+                                        <button type="button" class="btn btn-light form-btn" (click)="goToRegFrenchise()">Back</button>
+                                        <button type="button" class="btn btn-light form-btn" (click)="goToContact()">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            @if(restuarntFormEnum.Contact == formIndex){
+                <div class="register-frenchise">
+                    <div class="container">
+                        <div class="card p-5 mt-5 rounded-5">
+                            <div class="row">
+                
+                                <div class="col col-lg-6 mb-4">
+                                    <label class="mx-3 mb-2 fw-bold">Name</label>
+                                    <input type="text"  formControlName="ContactName" class="form-control bg-light rounded-5 border-black-50 py-2 px-3" placeholder="Enter your First Name">
+                                    @if(form.controls['ContactName'].invalid){
+                                        <span class="danger">Reference Site Name is required </span>
+                                     } 
+                                </div>
+                               
+                                <div class="col col-lg-6 mb-4">
+                                    <label class="mx-3 mb-2 fw-bold">Surname</label>
+                                    <input type="text" formControlName="Surname" class="form-control bg-light rounded-5 border-black-50 py-2 px-3" placeholder="Enter your Surname">
+                                    @if(form.controls['Surname'].invalid){
+                                        <span class="danger">Reference Site Name is required </span>
+                                     }
+                                </div>
+                               
+                                <div class="col col-lg-6 mb-4">
+                                    <label class="mx-3 mb-2 fw-bold">Email</label>
+                                    <input type="email" formControlName="Email" class="form-control bg-light rounded-5 border-black-50 py-2 px-3" placeholder="Your Email">
+                                    @if(form.controls['Email'].invalid){
+                                        <span class="danger">Reference Site Name is required </span>
+                                     }
+                                </div>
+                               
+                                <div class="col col-lg-6 mb-4">
+                                    <label class="mx-3 mb-2 fw-bold">Phone Number</label>
+                                    <input type="number" formControlName="PhoneNumber" class="form-control bg-light rounded-5 border-black-50 py-2 px-3" placeholder="Phone Number">
+                                    @if(form.controls['PhoneNumber'].invalid){
+                                        <span class="danger">Reference Site Name is required </span>
+                                     }
+                                </div>
+                               
+                                <div class="col col-lg-6 mb-4">
+                                    <label class="mx-3 mb-2 fw-bold">Password</label>
+                                    <input type="password" formControlName="Password" class="form-control bg-light rounded-5 border-black-50 py-2 px-3" placeholder="Your Password">
+                                    @if(form.controls['Password'].invalid){
+                                        <span class="danger">Reference Site Name is required </span>
+                                     }
+                                </div>
+                               
+                                <div class="col col-lg-6 mb-4">
+                                    <label class="mx-3 mb-2 fw-bold">Confirm Password</label>
+                                    <input type="password" formControlName="ConfirmPassword"  class="form-control bg-light rounded-5 border-black-50 py-2 px-3" placeholder="Confirm Password">
+                                    @if(form.controls['ConfirmPassword'].invalid){
+                                        <span class="danger">Reference Site Name is required </span>
+                                     }
+                                </div>
+                
+                                <div class="col col-lg-12 mt-5">
+                                    <div class="d-flex justify-content-end gap-3">
+                                        <button type="button" class="btn btn-light form-btn" (click)="FgoToAddress()">Back</button>
+                                        <button type="button" class="btn btn-light form-btn" (click)="goToVerification()">Next</button>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+            @if(restuarntFormEnum.Varification == formIndex){
+                <div class="register-frenchise">
+                    <div class="container">
+                        <div class="card p-5 mt-5 rounded-5">
+                            <div class="row">
+                
+                                <div class="my-5 text-center ">
+                                    <h2>A confirmation email has been sent for your account!</h2>
+                                    <p>Thank you for joining the Trace Web community!</p>
+                                </div>
+                
+                                
+                
+                                <div class="col col-lg-12 mt-5">
+                                    <div class="d-flex justify-content-end gap-3">
+                                        <button type="button" class="btn btn-light form-btn" (click)="goToContact()">Back</button>
+                                        <button type="button" class="btn btn-light form-btn" (click)="FgoToAddress()">Next</button>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            }
+            
+        </form>
+        </div>
+    </div>
+</div>
